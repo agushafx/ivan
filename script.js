@@ -48,3 +48,9 @@
 // == сравнение по значению/=== по значению + типу;
 
 // Урок 010 Git и GitHub
+// 1. git status;
+// 2. git add - A;
+// 3. git commit - a - m"comment";
+// 4. git push;
+// 5. git clone * link GitHub * newFolderName - скачать проект и создать новую папку на пк;
+// 6. git pull - обновить файлы из репозитория;
