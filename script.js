@@ -54,3 +54,24 @@
 // 4. git push;
 // 5. git clone * link GitHub * newFolderName - скачать проект и создать новую папку на пк;
 // 6. git pull - обновить файлы из репозитория;
+
+//Урок 011 Пратика
+const numberOfFilms = +prompt('Сколько фильмов посмотрел?', '');
+const lastFilm = prompt('Последний фильм?', '');
+const lastFilmOcenka = +prompt('Оценка от 1 до 10', '');
+const lastFilm1 = prompt('Последний фильм?', '');
+const lastFilmOcenka1 = +prompt('Оценка от 1 до 10', '');
+
+
+const personalMovieDb = {
+   count: numberOfFilms,
+   movies: {},
+   actors: {},
+   genres: [],
+   private: false
+};
+
+personalMovieDb.movies[lastFilm] = lastFilmOcenka;
+personalMovieDb.movies[lastFilm1] = lastFilmOcenka1;
+
+console.log(personalMovieDb);
