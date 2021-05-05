@@ -1,6 +1,9 @@
-"use strict";
+(function () {
+   'use strict';
+}());
 
 // Урок 005
+
 // let number = 5;
 // const myName = 'Evgenii';
 
@@ -10,6 +13,7 @@
 // console.log(myName);
 
 // Урок 006
+
 // const persone = {
 //    name: 'Ivan',
 //    age: 25,
@@ -23,6 +27,7 @@
 // console.log(friendName[2]);
 
 // Урок 007
+
 // const answers = [];
 
 // answers[0] = prompt('Погоняло?', '');
@@ -33,6 +38,7 @@
 // console.log(typeof (answers));
 
 // Урок 008 Интерполяция (ES6)
+
 // const category = 'toys';
 // console.log(`https://url.com/${category}/5`);
 
@@ -41,6 +47,7 @@
 // console.log(typeof (user));
 
 // Урок 009 Операторы
+
 // И && true + false = false;
 // Или || true + false = true;
 // Отрицание != ;
@@ -48,20 +55,80 @@
 // == сравнение по значению/=== по значению + типу;
 
 // Урок 010 Git и GitHub
+
 // 1. git status;
 // 2. git add - A;
 // 3. git commit - a - m"comment";
 // 4. git push;
-// 5. git clone * link GitHub * newFolderName - скачать проект и создать новую папку на пк;
+// 5. git clone * link GitHub * newFolderName - скачать и создать новую папку;
 // 6. git pull - обновить файлы из репозитория;
 
-//Урок 011 Пратика
-const numberOfFilms = +prompt('Сколько фильмов посмотрел?', '');
-const lastFilm = prompt('Последний фильм?', '');
-const lastFilmOcenka = +prompt('Оценка от 1 до 10', '');
-const lastFilm1 = prompt('Последний фильм?', '');
-const lastFilmOcenka1 = +prompt('Оценка от 1 до 10', '');
+//Урок 012 Пратика
 
+// const numberOfFilms = +prompt('Сколько фильмов посмотрел?', '');
+// const lastFilm = prompt('Последний фильм?', '');
+// const lastFilmOcenka = +prompt('Оценка от 1 до 10', '');
+// const lastFilm1 = prompt('Последний фильм?', '');
+// const lastFilmOcenka1 = +prompt('Оценка от 1 до 10', '');
+
+
+// const personalMovieDb = {
+//    count: numberOfFilms,
+//    movies: {},
+//    actors: {},
+//    genres: [],
+//    private: false
+// };
+
+// personalMovieDb.movies[lastFilm] = lastFilmOcenka;
+// personalMovieDb.movies[lastFilm1] = lastFilmOcenka1;
+
+// console.log(personalMovieDb);
+
+//Урок 013 Условия
+
+// const num = 50;
+
+// if (num < 49) {
+//    console.log('error');
+// } else if (num > 51) {
+//    console.log('too much');
+// } else {
+//    console.log('norm');
+// }
+
+//Условный (тернарный) оператор
+// const num = 50;
+// (num === 50) ? console.log('norm') : console.log('error');
+
+// const num = 100;
+// switch (num) {
+//    case 49:
+//       console.log('error');
+//       break;
+//    case 51:
+//       console.log('error');
+//       break
+//    case 50:
+//       console.log('Ok!');
+//       break
+//    default:
+//       console.log('Совпадений нет');
+//       break
+// }
+
+//Урок 014 Циклы while/do/for
+
+// for (let i = 1; i < 10; i++) {
+//    if (i === 5) {
+//       continue;
+//    }
+//    console.log(i);
+// }
+
+// Урок 015 Практика2
+
+const numberOfFilms = +prompt('Сколько фильмов посмотрел?', '');
 
 const personalMovieDb = {
    count: numberOfFilms,
@@ -71,7 +138,26 @@ const personalMovieDb = {
    private: false
 };
 
-personalMovieDb.movies[lastFilm] = lastFilmOcenka;
-personalMovieDb.movies[lastFilm1] = lastFilmOcenka1;
+for (let i = 0; i < 2; i++) {
+   const lastFilm = prompt('Последний фильм?', ''),
+      lastFilmOcenka = +prompt('Оценка от 1 до 10', '');
+   if (lastFilm != null && lastFilmOcenka != null && lastFilm != '' && lastFilmOcenka != '' && lastFilm.length < 50) {
+      personalMovieDb.movies[lastFilm] = lastFilmOcenka;
+      console.log('done');
+   } else {
+      console.log('error');
+      i--;
+   }
+}
+
+if (numberOfFilms < 10) {
+   alert('Чёт мало фильмов, лох');
+} else if (numberOfFilms > 10 && numberOfFilms < 30) {
+   alert('Уважаемый человек');
+} else if (numberOfFilms > numberOfFilms < 30) {
+   alert('Поздравляю, Вы задрот');
+} else {
+   alert('Ошиб_ОЧКА!');
+}
 
 console.log(personalMovieDb);
