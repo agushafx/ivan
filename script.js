@@ -128,7 +128,54 @@
 
 // Урок 015 Практика2
 
-const numberOfFilms = +prompt('Сколько фильмов посмотрел?', '');
+// const numberOfFilms = +prompt('Сколько фильмов посмотрел?', '');
+
+// const personalMovieDb = {
+//    count: numberOfFilms,
+//    movies: {},
+//    actors: {},
+//    genres: [],
+//    private: false
+// };
+
+// for (let i = 0; i < 2; i++) {
+//    const lastFilm = prompt('Последний фильм?', ''),
+//       lastFilmOcenka = +prompt('Оценка от 1 до 10', '');
+// if (lastFilm != null && lastFilmOcenka != null && lastFilm != ''
+// && lastFilmOcenka != '' && lastFilm.length < 50) {
+//       personalMovieDb.movies[lastFilm] = lastFilmOcenka;
+//       console.log('done');
+//    } else {
+//       console.log('error');
+//       i--;
+//    }
+// }
+
+// if (numberOfFilms < 10) {
+//    alert('Чёт мало фильмов, лох');
+// } else if (numberOfFilms > 10 && numberOfFilms < 30) {
+//    alert('Уважаемый человек');
+// } else if (numberOfFilms > numberOfFilms < 30) {
+//    alert('Поздравляю, Вы задрот');
+// } else {
+//    alert('Ошиб_ОЧКА!');
+// }
+
+// console.log(personalMovieDb);
+
+// Урок 018 Практика3
+
+let numberOfFilms;
+
+function start() {
+   numberOfFilms = +prompt('Сколько фильмов посмотрел?', '');
+   while (numberOfFilms == '' || numberOfFilms == null ||
+      isNaN(numberOfFilms)) {
+      numberOfFilms = +prompt('Сколько фильмов посмотрел?', '');
+   }
+}
+
+start();
 
 const personalMovieDb = {
    count: numberOfFilms,
@@ -138,26 +185,50 @@ const personalMovieDb = {
    private: false
 };
 
-for (let i = 0; i < 2; i++) {
-   const lastFilm = prompt('Последний фильм?', ''),
-      lastFilmOcenka = +prompt('Оценка от 1 до 10', '');
-   if (lastFilm != null && lastFilmOcenka != null && lastFilm != '' && lastFilmOcenka != '' && lastFilm.length < 50) {
-      personalMovieDb.movies[lastFilm] = lastFilmOcenka;
-      console.log('done');
-   } else {
-      console.log('error');
-      i--;
+function rememberMyFilms() {
+   for (let i = 0; i < 2; i++) {
+      const lastFilm = prompt('Последний фильм?', ''),
+         lastFilmOcenka = +prompt('Оценка от 1 до 10', '');
+      if (lastFilm != null && lastFilmOcenka != null && lastFilm != '' &&
+         lastFilmOcenka != '' && lastFilm.length < 50) {
+         personalMovieDb.movies[lastFilm] = lastFilmOcenka;
+         console.log('done');
+      } else {
+         console.log('error');
+         i--;
+      }
    }
 }
 
-if (numberOfFilms < 10) {
-   alert('Чёт мало фильмов, лох');
-} else if (numberOfFilms > 10 && numberOfFilms < 30) {
-   alert('Уважаемый человек');
-} else if (numberOfFilms > numberOfFilms < 30) {
-   alert('Поздравляю, Вы задрот');
-} else {
-   alert('Ошиб_ОЧКА!');
+// rememberMyFilms();
+
+function detectPersonalLvl() {
+   if (numberOfFilms < 10) {
+      alert('Чёт мало фильмов, лох');
+   } else if (numberOfFilms > 10 && numberOfFilms < 30) {
+      alert('Уважаемый человек');
+   } else if (numberOfFilms > numberOfFilms < 30) {
+      alert('Поздравляю, Вы задрот');
+   } else {
+      alert('Ошиб_ОЧКА!');
+   }
 }
 
-console.log(personalMovieDb);
+// detectPersonalLvl();
+
+function showMyDB() {
+   if (personalMovieDb.private == false) {
+      console.log(personalMovieDb);
+   }
+}
+
+showMyDB();
+
+function writeYourGenres() {
+   for (let i = 1; i <= 3; i++) {
+      const genre = prompt(`Ваш любимый жанр под номером ${i}`);
+      personalMovieDb.genres[i - 1] = genre;
+   }
+}
+
+writeYourGenres();
